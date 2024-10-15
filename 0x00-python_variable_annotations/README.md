@@ -39,3 +39,9 @@ they don't enforce types at runtime
             print("Operation was successful.")
         elif status == 'failure':
             print("Operation failed.")
+
+### notes
+
+when dealing with callable functions like 8
+it's a function that returns a function that returns a value
+can be called by functionName(value1)(value2) // for 8.py
