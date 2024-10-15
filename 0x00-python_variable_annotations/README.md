@@ -39,6 +39,23 @@ they don't enforce types at runtime
             print("Operation was successful.")
         elif status == 'failure':
             print("Operation failed.")
+6. Iterable:
+
+An Iterable is any object that you can loop through, like with a for loop. It doesn’t need to support indexing.
+
+    from typing import Iterable
+    def process_items(items: Iterable[int]) -> None:
+        for item in items:
+            print(item)
+
+
+7. Sequence:
+
+A Sequence is an iterable with a specific order. You can access elements using their index, like a list or tuple.
+
+    from typing import Sequence
+    def process_sequence(seq: Sequence[int]) -> None:
+        print(seq[0])  # Access by index
 
 ### notes
 

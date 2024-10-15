@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-make_multiplier = __import__('8-make_multiplier').make_multiplier
-print (make_multiplier(5)(5))
-print (make_multiplier(5))
+element_length = __import__('9-element_length').element_length
 
+print(element_length.__annotations__)
