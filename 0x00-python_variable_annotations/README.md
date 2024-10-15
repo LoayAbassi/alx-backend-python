@@ -57,6 +57,11 @@ A Sequence is an iterable with a specific order. You can access elements using t
     def process_sequence(seq: Sequence[int]) -> None:
         print(seq[0])  # Access by index
 
+8. typeVar : lets u use any type u want without ruining structure..
+    from typing import TypeVar
+    T = TypeVar('T')
+    def process_data(data: T) -> None:
+        print(data)
 ### notes
 
 when dealing with callable functions like 8
