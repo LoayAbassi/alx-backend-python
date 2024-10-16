@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """contains a zoom array function"""
-from typing import List, Union
+from typing import List, Union, Tuple
 
 
-def zoom_array(lst: List, factor: Union[int, float] = 2) -> List:
+def zoom_array(lst: Tuple, factor: Union[int, float] = 2) -> List:
     """
-
     Args:
-        lst (List): list of integers
+        lst (Tuple): tuple of integers
         factor (Union[int, float], optional): Defaults to 2.
 
     Returns:
@@ -20,7 +19,7 @@ def zoom_array(lst: List, factor: Union[int, float] = 2) -> List:
     return zoomed_in
 
 
-array = [12, 72, 91]
+array = (12, 72, 91)  # Define array as a tuple
 
 zoom_2x = zoom_array(array)
 
