@@ -67,3 +67,8 @@ A Sequence is an iterable with a specific order. You can access elements using t
 when dealing with callable functions like 8
 it's a function that returns a function that returns a value
 can be called by functionName(value1)(value2) // for 8.py
+
+### checking for errors type before even executing 
+pip install mypy 
+mypy your_file.py
+--> this will return type related errors based on annotations
