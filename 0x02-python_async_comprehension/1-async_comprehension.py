@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+returning a list with random values.
 """
 
 from typing import List
