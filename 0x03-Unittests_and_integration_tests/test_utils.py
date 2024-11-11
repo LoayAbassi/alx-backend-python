@@ -2,7 +2,7 @@
 """testing access to nested map"""
 
 import unittest
-import parameterized
+from parameterized import parameterized
 import utils
 
 
