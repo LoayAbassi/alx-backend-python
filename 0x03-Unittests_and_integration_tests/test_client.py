@@ -26,3 +26,16 @@ class TestGithubOrgClient(unittest.TestCase):
             haja = GithubOrgClient("staghferallah")
             natija = haja._public_repos_url
             self.assertEqual(natija, mocked_object.return_value["repos_url"])
+
+    @patch("client.get_json")
+    def test_public_repos(self, mocked_get):
+        """coming soon"""
+        payload = [{"name": "loay"}, {"name": "abassi"}]
+        mocked_get.return_value = payload
+        with patch("client.GithubOrgClient._public_repos_url") as mocking_public:
+            mocking_public.return_value = "lol"
+            simulation = GithubOrgClient("endpoint")
+            result = simulation.public_repos()
+            expectation = [p["name"] for p in payload]
+            mocked_get.assert_called_once()
+            mocking_public.assert_called_once()
