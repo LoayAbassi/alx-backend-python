@@ -40,10 +40,24 @@ class TestGithubOrgClient(unittest.TestCase):
         with patch(
             "client.GithubOrgClient._public_repos_url"
         ) as mocking_public:
-            mocking_public.return_value = "lol"
+            mocking_public.return_value = payload
             simulation = GithubOrgClient("endpoint")
-            result = simulation.public_repos()
+            result = simulation._public_repos_url()
             expectation = [p["name"] for p in payload]
             self.assertEqual(result, expectation)
         mocked_get.assert_called_once()
         mocking_public.assert_called_once()
+
+    parameterized.expand([
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False)
+    ])
+
+    def test_has_license(self, repo, license_key, expected):
+        """license w master..."""
+        result = GithubOrgClient("test")
+        self.assertEqual(result.has_license(repo, license_key, expected))
+
+
+if __name__ == "__main__":
+    unittest.main()
