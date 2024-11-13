@@ -44,6 +44,6 @@ class TestGithubOrgClient(unittest.TestCase):
             simulation = GithubOrgClient("endpoint")
             result = simulation.public_repos()
             expectation = [p["name"] for p in payload]
-            mocked_get.assert_called_once()
-            mocking_public.assert_called_once()
             self.assertEqual(result, expectation)
+        mocked_get.assert_called_once()
+        mocking_public.assert_called_once()
