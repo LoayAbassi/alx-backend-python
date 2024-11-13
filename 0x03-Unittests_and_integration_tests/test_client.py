@@ -37,7 +37,9 @@ class TestGithubOrgClient(unittest.TestCase):
         """coming soon"""
         payload = [{"name": "loay"}, {"name": "abassi"}]
         mocked_get.return_value = payload
-        with patch("client.GithubOrgClient._public_repos_url") as mocking_public:
+        with patch(
+            "client.GithubOrgClient._public_repos_url"
+        ) as mocking_public:
             mocking_public.return_value = "lol"
             simulation = GithubOrgClient("endpoint")
             result = simulation.public_repos()
