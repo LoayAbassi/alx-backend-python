@@ -21,7 +21,12 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         "does something too"
-        with patch.object(GithubOrgClient, "org", new_callable=PropertyMock) as mocked_object:
+        with patch.object(
+                GithubOrgClient,
+                "org",
+                new_callable=PropertyMock
+        )as mocked_object:
+
             mocked_object.return_value = {"repos_url": "salut_bb"}
             haja = GithubOrgClient("staghferallah")
             natija = haja._public_repos_url
@@ -39,3 +44,4 @@ class TestGithubOrgClient(unittest.TestCase):
             expectation = [p["name"] for p in payload]
             mocked_get.assert_called_once()
             mocking_public.assert_called_once()
+            self.assertEqual(result, expectation)
